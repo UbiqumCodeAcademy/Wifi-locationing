@@ -69,15 +69,16 @@ ggplotly(p = ggplot2::last_plot())
 
 
 vars_waps <- colnames(wide_train[, 1:520])
-wide_train[, vars_waps][wide_train[, vars_waps] == 100] <- -105 # place them as low signal 
-wide_test[, vars_waps][wide_test[, vars_waps] == 100] <- -105 
 
-new_test[,  1:520][new_test[,1:520] == 100] <- -105 
+wide_train[wide_train == 100] <- -105 # shorter code
+wide_test[wide_test == 100] <- -105 # shorter code
+
+new_test[new_test == 100] <- -105 # shorter code
 
 rm(vars_waps)
 
 
-# Set NAs to low intensity RSSI in long format #####
+# Set NAs to low intensity RSSI in long format ##### NOT SURE ABOUT THIS PART
 long_train[,11][long_train[, 11] == 100] <- -105 # in long_train WAPid is the only
 long_test[,11][long_test[, 11] == 100] <- -105  # attribute changed as it contains the RSSI
 
