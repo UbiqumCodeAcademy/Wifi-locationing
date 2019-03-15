@@ -14,7 +14,7 @@ pacman:: p_load("readr","dplyr", "tidyr", "ggplot2", "plotly",
                 "hablar")
 
 #Set working directory
-setwd("C:/Users/usuario/Desktop/UBIQUM/Project 8 - Wifi locationing/Wifi-locationing")
+setwd("C:/Users/usuario/Desktop/UBIQUM/Project 8 - Wifi locationing/Wifi-locationing") # Make sure to use relative working directories (talk to me or Florian to understand this point)
 
 
 #Read initial data sets
