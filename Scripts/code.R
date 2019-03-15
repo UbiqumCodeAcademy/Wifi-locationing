@@ -14,13 +14,15 @@ pacman:: p_load("readr","dplyr", "tidyr", "ggplot2", "plotly",
                 "hablar")
 
 #Set working directory
-setwd("C:/Users/usuario/Desktop/UBIQUM/Project 8 - Wifi locationing/Wifi-locationing") # Make sure to use relative working directories (talk to me or Florian to understand this point)
+current_path = rstudioapi::getActiveDocumentContext()$path #save working directory
+setwd(dirname(current_path))
+setwd("..") # Make sure to use relative working directories (talk to me or Florian to understand this point)
 
 
 #Read initial data sets
-original_train <- read_csv("./DataSets/trainingData.csv")
-original_test <- read_csv("./DataSets/validationData.csv")
-new_test <- read_csv("./DataSets/testData.csv")
+original_train <- read_csv("./DataSets/train.csv") # name was wrong
+original_test <- read_csv("./DataSets/validationData.csv") # it is not in the folder
+new_test <- read_csv("./DataSets/test.csv") # name was wrong
 
 
 ############################## PRE-PROCESSING ########################################
